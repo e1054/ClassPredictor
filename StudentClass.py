@@ -1,3 +1,5 @@
+from data import *
+
 class StudentClass:
     def __init__(self, id, block):
         self.id = id
@@ -8,72 +10,118 @@ class StudentClass:
 
     def getClassID(self, id:int) ->int:
         i = 1
-        if (id > 4): # Algebra CP
+        total = 0
+        total += total_math_cp
+        if id > total: # Math CP
             i+=1
-        if (id > 8): # Algebra E
+        total += total_math_e
+        if id > total: # Math E
             i+=1
-        if (id > 12): # Algebra H
+        total += total_math_h
+        if id > total: # Math H
             i+=1
-        if (id > 16): # Biology CP
+        total += total_science_cp
+        if id > total: # Science CP
             i+=1
-        if (id > 20): # Biology E
+        total += total_science_e
+        if id > total: # Science E
             i+=1
-        if (id > 24): # Biology H
+        total += total_science_h
+        if id > total: # Science H
             i+=1
-        if (id > 30): # English CP
+        total += total_english_cp
+        if id > total: # English CP
             i+=1
-        if (id > 36): # US History
+        total += total_english_h
+        if id > total: # English H
             i+=1
-        if (id > 48): # Gym
+        total += total_history
+        if id > total: # US History
             i+=1
-        if (id > 60): # Spanish - CP
+        total += total_gym
+        if id > total: # Gym
             i+=1
-        if (id > 63): # Spanish - H
+        total += total_spanish_cp
+        if id > total: # Spanish - CP
             i+=1
-        if (id > 66): # French - CP
+        total += total_spanish_h
+        if id > total: # Spanish - H
             i+=1
-        if (id > 67): # French - H
+        total += total_french_cp
+        if id > total: # French - CP
             i+=1
-        if (id > 68): # Chinese - CP
+        total += total_french_h
+        if id > total: # French - H
             i+=1
-        if (id > 69): # Chinese - H
+        total += total_chinese_cp
+        if id > total: # Chinese - CP
             i+=1
-        if (id > 70): # Latin - CP
+        total += total_chinese_h
+        if id > total: # Chinese - H
             i+=1
-        if (id > 71):  # Latin - H
+        total += total_latin_cp
+        if id > total: # Latin - CP
+            i+=1
+        total += total_latin_h
+        if id > total:  # Latin - H
              i += 1
         return i
 
     def getClassLevel(self, id:int) ->str:
-        if (id > 70): # Latin - CP
-            return 'CP'
-        if (id > 69): # Chinese - H
+        total = total_classes
+        total -= total_latin_h
+        if id > total: # Latin - H
             return 'H'
-        if (id > 67): # French - H
-            return 'H'
-        if (id > 66): # French - CP
+        total -= total_latin_cp
+        if id > total: # Latin - CP
             return 'CP'
-        if (id > 63): # Spanish - H
+        total -= total_chinese_h
+        if id > total: # Chinese - H
             return 'H'
-        if (id > 60): # Spanish - CP
+        total -= total_chinese_cp
+        if id > total: # Chinese - CP
             return 'CP'
-        if (id > 48): # Gym
+        total -= total_french_h
+        if id > total: # French - H
+            return 'H'
+        total -= total_french_cp
+        if id > total: # French - CP
+            return 'CP'
+        total -= total_spanish_h
+        if id > total: # Spanish - H
+            return 'H'
+        total -= total_spanish_cp
+        if id > total: # Spanish - CP
+            return 'CP'
+        total -= total_gym
+        if id > total: # Gym
             return 'GYM'
-        if (id > 36): # US History
+        total -= total_history
+        if id > total: # History
             return 'HISTORY'
-        if (id > 30): # English CP
+        total -= total_english_h
+        if id > total: # English H
             return 'CP'
-        if (id > 24): # Biology H
-            return 'H'
-        if (id > 20): # Biology E
-            return 'E'
-        if (id > 16): # Biology CP
+        total -= total_english_cp
+        if id > total: # English CP
             return 'CP'
-        if (id > 12): # Algebra H
+        total -= total_science_h
+        if id > total: # Science H
             return 'H'
-        if (id > 8): # Algebra E
+        total -= total_science_e
+        if id > total: # Science E
             return 'E'
-        if (id > 4): # Algebra CP
+        total -= total_science_cp
+        if id > total: # Science CP
+            return 'CP'
+        total -= total_math_h
+        if id > total: # Math H
+            return 'H'
+        total -= total_math_e
+        if id > total: # Math E
+            return 'E'
+        total -= total_math_cp
+        if id > total: # Math CP
             return 'CP'
 
         return 'CP'
