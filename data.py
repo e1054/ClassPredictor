@@ -1,8 +1,9 @@
 import user_input
 
-student_list = []
-class_list = []
+student_list = [] # List of students
+class_list = []   # List of classes
 
+# Data recorded
 simular_list = {"Simular 0": 0, "Simular 1": 0, "Simular 2": 0, "Simular 3": 0, "Simular 4": 0,
                 "Simular 5": 0, "Simular 6": 0, "Simular 7": 0, "Simular 8": 0,
                 "Simular With Level 0": 0, "Simular With Level 1": 0, "Simular With Level 2": 0, "Simular With Level 3": 0, "Simular With Level 4": 0,
@@ -38,6 +39,9 @@ total_chinese_h = 1
 # Latin
 total_latin_cp = 1
 total_latin_h = 1
+
+def get_total_languages() -> int:
+    return total_spanish_cp + total_spanish_h + total_french_cp + total_french_h + total_chinese_cp+total_chinese_h+total_latin_cp+total_latin_h
 
 def set_settings():
     total = 0

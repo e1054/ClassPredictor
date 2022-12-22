@@ -2,6 +2,7 @@ from data import *
 
 class StudentClass:
     def __init__(self, id, block):
+        """Student Class to simulate each class"""
         self.id = id
         self.block = block
         self.classid = self.getClassID(id)
@@ -9,6 +10,8 @@ class StudentClass:
 
 
     def getClassID(self, id:int) ->int:
+        """Get the class id"""
+
         i = 1
         total = 0
         total += total_math_cp
@@ -68,6 +71,8 @@ class StudentClass:
         return i
 
     def getClassLevel(self, id:int) ->str:
+        """Get the class level (CP, Enriched[E], Honors[H])"""
+
         total = total_classes
         total -= total_latin_h
         if id > total: # Latin - H
