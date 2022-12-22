@@ -74,10 +74,10 @@ def check_simular_classes():
                 if class1.id == class2.id:
                     simulate_with_level_classes += 1
                     # Check if the class is a language class. (Only once for each 8 blocks)
-                    if not language_found and (class1.classid >= total_classes-get_total_languages()):
+                    if not language_found and (class1.classid >= total_classes-total_languages):
                         data.simular_list["Simular Language"] += 1
                         language_found = True
-                    if not none_language_found and (class1.classid < total_classes-get_total_languages()):
+                    if not none_language_found and (class1.classid < total_classes-total_languages):
                         data.simular_list["Simular None Language"] += 1
                         none_language_found = True
                 # Check if class is the same level.

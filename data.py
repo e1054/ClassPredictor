@@ -39,9 +39,10 @@ total_chinese_h = 1
 # Latin
 total_latin_cp = 1
 total_latin_h = 1
-
 def get_total_languages() -> int:
     return total_spanish_cp + total_spanish_h + total_french_cp + total_french_h + total_chinese_cp+total_chinese_h+total_latin_cp+total_latin_h
+
+total_languages = get_total_languages()
 
 def set_settings():
     total = 0
@@ -92,3 +93,7 @@ def set_settings():
     total += total_latin_cp
     total_latin_h = user_input.get_int_positiv("18/18 | Please enter amount of Honors Latin classes (" + str(total) + "/" + str(total_classes) + ")")
     total += total_latin_h
+
+    # Update total languages classes
+    total_languages = get_total_languages()
+    pass
