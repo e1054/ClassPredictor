@@ -3,4 +3,3 @@ class Student:
         """A student in the simulation"""
         self.id = id
         self.classes = []
-    

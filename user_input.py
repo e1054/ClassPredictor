@@ -4,7 +4,7 @@ def get_text(message: str) -> str:
     str:return: Input from the user
     """
     clear_terminal()
-    return input(message+"\n")
+    return input(message + "\n")
 
 
 def get_int(message: str) -> int:
@@ -17,10 +17,11 @@ def get_int(message: str) -> int:
     while not is_int:
         try:
             clear_terminal()
-            i = int(input(message+"\n"))
+            i = int(input(message + "\n"))
             return i
         except:
             pass
+
 
 def get_int_positiv(message: str) -> int:
     """
@@ -32,13 +33,14 @@ def get_int_positiv(message: str) -> int:
     while not is_int:
         try:
             clear_terminal()
-            i = int(input(message+"\n"))
+            i = int(input(message + "\n"))
             if i >= 0:
                 return i
         except:
             pass
 
-def get_int_in_range(message: str, min:int, max:int) -> int:
+
+def get_int_in_range(message: str, min: int, max: int) -> int:
     """
     str:param message: Message to send the user
     int:param min: Min input from user
@@ -51,11 +53,12 @@ def get_int_in_range(message: str, min:int, max:int) -> int:
         try:
             clear_terminal()
             print("Min: " + str(min) + " | Max: " + str(max))
-            i = int(input(message+"\n"))
+            i = int(input(message + "\n"))
             if min <= i <= max:
                 return i
         except:
             pass
+
 
 def get_float(message: str) -> float:
     """
@@ -67,10 +70,11 @@ def get_float(message: str) -> float:
     while not is_int:
         try:
             clear_terminal()
-            i = float(input(message+"\n"))
+            i = float(input(message + "\n"))
             return i
         except:
             pass
+
 
 def get_boolean(message: str) -> bool:
     """
@@ -83,7 +87,7 @@ def get_boolean(message: str) -> bool:
         try:
             clear_terminal()
             print("Input should be TRUE or FALSE")
-            i = input(message+"\n")
+            i = input(message + "\n")
             if i.lower() == "true" or i.lower() == "yes":
                 return True
             elif i.lower() == "false" or i.lower() == "no":
@@ -91,5 +95,6 @@ def get_boolean(message: str) -> bool:
         except:
             pass
 
+
 def clear_terminal():
-    print("\n"*100)
+    print("\n" * 100)
